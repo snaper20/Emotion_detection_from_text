@@ -1,5 +1,8 @@
 import streamlit as st
-import joblib
+try:
+    import joblib
+except ImportError:
+    raise ImportError("Joblib is not installed. Please add 'joblib' to requirements.txt.")
 
 # Load model and vectorizer
 model = joblib.load("svm_emotion_model.joblib")
